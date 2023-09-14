@@ -50,7 +50,7 @@ jobs:
             g++ --version && 
             autoreconf -i -f -v  && 
             ./configure --help &&
-            ./configure --prefix="$(pwd)/${{ env.installationPath }}" &&
+            ./configure --enable-static=yes --enable-shared=no --prefix="$(pwd)/${{ env.installationPath }}" &&
             mingw32-make.exe install
             
       # - name: copy customized openssl-config.cmake
